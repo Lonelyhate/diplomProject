@@ -1,3 +1,5 @@
+import AuthorizationAPI from "./API/AuthorizationAPI";
+
 export const HOME_URL = "/";
 export const MAN_URL = HOME_URL + "man"
 export const WOMAN_URL = HOME_URL + "woman"

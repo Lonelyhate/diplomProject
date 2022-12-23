@@ -1,5 +1,4 @@
 import NavigationApp from "../NavigationApp";
-import {IoIosStarOutline} from  "react-icons/io"
 import {CiSearch, CiShoppingCart, CiUser, CiStar} from "react-icons/ci"
 import {IconType} from "react-icons";
 

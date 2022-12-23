@@ -2,6 +2,7 @@
 
 .profile-links{
   position: relative;
+  z-index: 10;
   &__list{
     display: flex;
   }
@@ -40,6 +41,7 @@
   }
   &__profile {
     position: absolute;
+    z-index: 10;
     top: calc(100% + 4px);
     right: 0;
     background-color: $white;

@@ -5,6 +5,8 @@ import Auth from "./shared/Auth/Auth";
 import {Route, Routes} from "react-router-dom";
 import {HOME_URL} from "./models/urls";
 import HomePage from "./pages/HomePage/HomePage";
+import AuthorizationAPI from "./models/API/AuthorizationAPI";
+import Spinner from "./UI/Spinner/Spinner";
 
 function App() {
   return (

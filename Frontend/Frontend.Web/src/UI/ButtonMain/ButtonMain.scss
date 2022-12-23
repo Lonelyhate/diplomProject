@@ -17,4 +17,15 @@
   &:hover{
     opacity: 0.8;
   }
+  &.loading {
+    color: red;
+    background-color: $primary-30;
+  }
+}
+
+.loading {
+  &:hover{
+    opacity: 1;
+    cursor: default;
+  }
 }
