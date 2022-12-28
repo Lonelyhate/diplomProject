@@ -1,16 +1,27 @@
 import BaseAPI from "./BaseAPI";
 import ApiType from "./ApiType";
-import {IBaseResponse} from "./BaseResponse";
+import {IUser} from "../User";
 
 class AuthorizationAPI extends BaseAPI
 {
-    BaseUrl = "https://localhost:7175/"
+    BaseUrl = "https://localhost:7175/api/"
 
     public async  UserChekByLogin(email: string) {
         return await this.SendAsync<boolean>({
-            Url: `api/User/check?email=${email}`,
+            Url: `/User/check?email=${email}`,
             ApiType: ApiType.GET,
         });
+    }
+
+    public async UserLogin(login: string, password: string) {
+        return await this.SendAsync<IUser>({
+            Url: `User/login`,
+            ApiType: ApiType.POST,
+            Data: {
+                email: login,
+                password: password
+            }
+        })
     }
 }
 

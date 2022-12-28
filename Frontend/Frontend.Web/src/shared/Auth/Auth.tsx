@@ -21,7 +21,7 @@ const Auth : FC = () => {
 
     return (
         <div className="auth">
-            {!isPasswordElement == true ? <AuthLogin isLoading={isLoading} onClick={sendEmailForCheckUser} login={userLogin} setLogin={setUserLogin} /> : <AuthPassword isHaveAccount={checkUserByLogin} />}
+            {!isPasswordElement == true ? <AuthLogin isLoading={isLoading} onClick={sendEmailForCheckUser} login={userLogin} setLogin={setUserLogin} /> : <AuthPassword toReturn={setIsPasswordElement} isHaveAccount={checkUserByLogin} />}
         </div>
     );
 };

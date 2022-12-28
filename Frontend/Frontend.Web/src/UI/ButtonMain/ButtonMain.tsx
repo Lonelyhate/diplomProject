@@ -5,7 +5,7 @@ import Spinner from "../Spinner/Spinner";
 
 interface IButtonMain {
     text: string | JSX.Element
-    backGround?: "primary"
+    backGround?: "primary" | "gray"
     width?: string
     height?: string
     maringBottom?: string
@@ -13,6 +13,7 @@ interface IButtonMain {
     isLoading?: boolean
     sizeSpinner?: number
     widthBorder?: number
+    marginTop?: string
 }
 
 const ButtonMain : FC<IButtonMain> = (
@@ -25,14 +26,16 @@ const ButtonMain : FC<IButtonMain> = (
         onClick,
         isLoading = false,
         sizeSpinner = 40,
-        widthBorder = 4
+        widthBorder = 4,
+        marginTop
     }
 ) => {
     return (
-        <button disabled={isLoading ? true : false} onClick={onClick} style={{width: width, height: height, marginBottom: maringBottom}}
+        <button disabled={isLoading ? true : false} onClick={onClick} style={{width: width, height: height, marginBottom: maringBottom, marginTop: marginTop}}
                 className={cn("button-main",
                     {
                         primary: backGround == "primary",
+                        gray: backGround == "gray",
                         loading: isLoading == true
                     }
                 )

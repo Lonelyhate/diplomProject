@@ -8,7 +8,7 @@ class BaseAPI {
 
     protected BaseUrl: string = "";
 
-    async SendAsync<T>(apiRequest: ApiRequest<T>) {
+    async SendAsync<T>(apiRequest: ApiRequest<any>) {
         let response = null;
         try
         {

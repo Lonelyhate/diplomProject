@@ -23,6 +23,15 @@
   }
 }
 
+.gray {
+  background-color: $primary-5;
+  color: $mainTextColor;
+  transition: background-color 0.3s ease;
+  &:hover{
+    background-color: $primary-10;
+  }
+}
+
 .loading {
   &:hover{
     opacity: 1;
