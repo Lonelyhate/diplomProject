@@ -1,5 +1,7 @@
 import React, {FC} from 'react';
 import "./AuthInput.scss";
+import cn from 'classnames'
+import {useAppSelector} from "../../../hooks/redux";
 
 interface IAuthInput {
     placeholder?: string
@@ -11,13 +13,16 @@ interface IAuthInput {
 }
 
 const AuthInput: FC<IAuthInput> = ({placeholder, type="text", marginBottom, value, setValue, marginTop}) => {
+    const {error} = useAppSelector(state => state.userReducer)
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue && setValue(e.target.value)
     }
 
     return (
-        <input value={value} onChange={(e) => onChange(e)} className={"auth-input input"} type={type} placeholder={placeholder} style={{marginBottom: marginBottom, marginTop: marginTop}}  />
+        <input value={value} onChange={(e) => onChange(e)} className={cn("auth-input input", {
+            error: error
+        })} type={type} placeholder={placeholder} style={{marginBottom: marginBottom, marginTop: marginTop}}  />
     );
 };
 

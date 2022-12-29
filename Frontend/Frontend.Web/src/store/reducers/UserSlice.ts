@@ -2,15 +2,17 @@ import {IUser} from "../../models/User";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 interface UserState {
-    user: IUser | null;
+    currentUser: IUser | null;
     isLoading: boolean;
     error: string;
+    isAuth: boolean;
 }
 
 const initialState: UserState = {
-    user: null,
+    currentUser: null,
     isLoading: false,
-    error: ''
+    error: '',
+    isAuth: false
 }
 
 export const userSlice = createSlice({
@@ -23,7 +25,8 @@ export const userSlice = createSlice({
         userSuccess(state, action: PayloadAction<IUser>) {
             state.isLoading = false;
             state.error = "";
-            state.user = action.payload;
+            state.currentUser = action.payload;
+            state.isAuth = true;
         },
         userError(state, action: PayloadAction<string>) {
             state.isLoading = false;

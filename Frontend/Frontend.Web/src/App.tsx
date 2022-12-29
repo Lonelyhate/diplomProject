@@ -11,12 +11,6 @@ import {useAppDispatch, useAppSelector} from "./hooks/redux";
 import {fetchUserLogin} from "./store/reducers/ActionCreator";
 
 function App() {
-    const dispatch = useAppDispatch();
-    const {user} = useAppSelector(state => state.userReducer);
-    useEffect(() => {
-        dispatch(fetchUserLogin())
-    }, [])
-    console.log(user);
   return (
     <div className="App">
         <Header/>

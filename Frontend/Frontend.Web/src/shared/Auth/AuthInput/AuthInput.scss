@@ -9,4 +9,7 @@
     font-weight: 400;
     color: $primary-30;
   }
+  &.error{
+    border: 1px solid $red;
+  }
 }

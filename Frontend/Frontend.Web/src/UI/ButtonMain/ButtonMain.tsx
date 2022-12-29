@@ -31,7 +31,7 @@ const ButtonMain : FC<IButtonMain> = (
     }
 ) => {
     return (
-        <button disabled={isLoading ? true : false} onClick={onClick} style={{width: width, height: height, marginBottom: maringBottom, marginTop: marginTop}}
+        <button disabled={isLoading ? true : false} onClick={onClick} style={{width: width, height: height, marginBottom: maringBottom, marginTop: marginTop,}}
                 className={cn("button-main",
                     {
                         primary: backGround == "primary",

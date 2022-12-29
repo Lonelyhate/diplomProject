@@ -39,7 +39,7 @@ const ProfileLinks: FC = () => {
             <div className={cn("profile-links__profile", {
                 active: isActiveProfile
             })}>
-                <Auth/>
+                <Auth openAuthInModal={isActiveProfile} />
             </div>
         </div>
     );

@@ -8,7 +8,7 @@ class AuthorizationAPI extends BaseAPI
 
     public async  UserChekByLogin(email: string) {
         return await this.SendAsync<boolean>({
-            Url: `/User/check?email=${email}`,
+            Url: `User/check?email=${email}`,
             ApiType: ApiType.GET,
         });
     }
