@@ -11,7 +11,7 @@ interface ISpinner
 
 const Spinner: FC<ISpinner> = ({size = 48, color = "#FFF", widthBorder = 5}) => {
     return (
-        <span style={{width: size, height: size, borderStyle: "solid", borderWidth: widthBorder, borderColor: color, borderBottomColor: "fff"}} className="loader"></span>
+        <span style={{width: size, height: size, borderStyle: "solid", borderWidth: widthBorder, borderColor: color, borderBottomColor: "transparent"}} className="loader"></span>
     );
 };
 

@@ -14,6 +14,7 @@ interface IButtonMain {
     sizeSpinner?: number
     widthBorder?: number
     marginTop?: string
+    disabled?: boolean
 }
 
 const ButtonMain : FC<IButtonMain> = (
@@ -27,11 +28,23 @@ const ButtonMain : FC<IButtonMain> = (
         isLoading = false,
         sizeSpinner = 40,
         widthBorder = 4,
-        marginTop
+        marginTop,
+        disabled
     }
 ) => {
+
+    const isDisabled = (): boolean => {
+        if (isLoading || disabled)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    console.log(disabled)
+
     return (
-        <button disabled={isLoading ? true : false} onClick={onClick} style={{width: width, height: height, marginBottom: maringBottom, marginTop: marginTop,}}
+        <button disabled={isDisabled()} onClick={onClick} style={{width: width, height: height, marginBottom: maringBottom, marginTop: marginTop,}}
                 className={cn("button-main",
                     {
                         primary: backGround == "primary",

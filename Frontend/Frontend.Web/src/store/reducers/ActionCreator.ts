@@ -6,7 +6,7 @@ import {Console} from "inspector";
 export const fetchUserLogin = (login: string, password: string) => async (dispacth: AppDispatch) => {
     let response;
     try {
-        dispacth(userSlice.actions.userLoading);
+        dispacth(userSlice.actions.userLoading());
         response = await AuthorizationAPI.UserLogin(login, password);
         if (!response.isSuccess) {
             dispacth(userSlice.actions.userError(response.displayMessage!));

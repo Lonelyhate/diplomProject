@@ -31,6 +31,12 @@ export const userSlice = createSlice({
         userError(state, action: PayloadAction<string>) {
             state.isLoading = false;
             state.error = action.payload;
+        },
+        userReset(state) {
+            state.currentUser = null
+            state.isLoading = false
+            state.isAuth = false
+            state.error = ''
         }
     }
 })

@@ -10,9 +10,10 @@ interface IAuthInput {
     marginBottom?: string
     value?: string
     setValue?: (e: any) => void;
+    validation?: boolean;
 }
 
-const AuthInput: FC<IAuthInput> = ({placeholder, type="text", marginBottom, value, setValue, marginTop}) => {
+const AuthInput: FC<IAuthInput> = ({placeholder, type="text", marginBottom, value, setValue, marginTop, validation = false}) => {
     const {error} = useAppSelector(state => state.userReducer)
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +22,7 @@ const AuthInput: FC<IAuthInput> = ({placeholder, type="text", marginBottom, valu
 
     return (
         <input value={value} onChange={(e) => onChange(e)} className={cn("auth-input input", {
-            error: error
+            error: error && validation
         })} type={type} placeholder={placeholder} style={{marginBottom: marginBottom, marginTop: marginTop}}  />
     );
 };
